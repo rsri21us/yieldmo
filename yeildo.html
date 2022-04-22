@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    body {
+  background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148817571.jpg?w=2000');
+}
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 300px;
+  height: 500px;
+  background: white;
+}
+
+</style>
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script async>
+        const myObject = [
+            
+            { title: 'Hello', descrption: 'ok', image: 'https://i.ibb.co/3sQXw31/skate.jpg' },
+            { title: 'Ok', descrption: 'ok', image: 'https://i.ibb.co/C92YGtg/shark.jpg' },
+            { title: 'Bye', descrption: 'ok', image: 'https://i.ibb.co/0mkkmG9/fish1.jpg' },
+            { title: 'Bye', descrption: 'ok', image: 'https://i.ibb.co/0mkkmG9/fish1.jpg' },
+        ];
+        const myObjectString = JSON.stringify(myObject);
+        localStorage.setItem('objectGreeting', myObjectString);
+        const url = "https://jsonplaceholder.typicode.com/posts";
+
+        var coords={x:0,y:0};
+        $(document).mousemove(function (e) {
+            coords.x = e.pageX;
+            coords.y =e.pageY;
+        });
+
+        function mouseCoordinates() {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    pos_x: coords.x,
+                    pos_y: coords.y
+                }
+            });
+        }
+
+        setInterval(mouseCoordinates, 1000);
+
+    </script>
+
+
+    <div class="smartphone">
+        <div class="content">
+          <iframe src="ad.html" style="width:100%;border:none;height:100%" ></iframe>
+        </div>
+      </div>
+    
+</body>
+
+</html>

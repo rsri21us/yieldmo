@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        .slider {
+            width: 92vw;
+            margin: 0 auto 20px;
+            text-align: center;
+        }
+
+        .slider .photos {
+            position: relative;
+            height: 35vh !important;
+        }
+
+        .slider .photos img {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .slider .photos img.shown {
+            opacity: 1;
+        }
+
+        .prev:before,
+        .next:before {
+            color: #fff;
+            font-size: 15vw;
+            position: absolute;
+            top: 30%;
+            padding: 1vh 1vw;
+            cursor: pointer;
+        }
+
+        .prev:before {
+            content: '<';
+            left: 0;
+        }
+
+        .next:before {
+            content: '>';
+            right: 0;
+        }
+       
+    </style>
+    
+</head>
+
+<body>
+    <!-- Slideshow container -->
+    <script src="ad.js"></script>
+    <script>
+
+        const myObjectString2 = localStorage.getItem('objectGreeting');
+        const myObject2 = JSON.parse(myObjectString2);
+        console.log(myObject2[0].image);
+        window.onload = function () {
+            document.getElementById('image').src = myObject2[0].image;
+            document.getElementById('image1').src = myObject2[1].image;
+            document.getElementById('image2').src = myObject2[2].image;
+            document.getElementById('image3').src = myObject2[0].image;
+        };
+    </script>
+    <div>
+        <h1> The 5 Technologies That Will Change The Future Of The Human Race </h1>
+        <p> In my book, Tech Trends in Practice, I talk about a lot of technology trends that are already moving out of
+            the R&D departments and into everyday life, but the following five I think will have the most profound
+            impacts on our society and the human race as a whole.</p>
+        <h2> Artificial Intelligence </h2>
+        <p> Artificial intelligence, or AI, and machine learning refer to the ability of machines to learn and act
+            intelligently, meaning they can make decisions, carry out tasks, and even predict future outcomes based on
+            what they learn from data.
+
+            AI and machine learning already play a bigger role in everyday life than you might imagine. Alexa, Siri,
+            Amazon's product recommendations, Netflix’s and Spotify’s personalized recommendations, every Google search
+            you make, security checks for fraudulent credit card purchases, dating apps, fitness trackers... All are
+            driven by AI.
+            AI is going to revolutionize almost every facet of modern life. Stephen Hawking said, “Success in creating
+            AI would be the biggest event in human history.” And Hawking immediately followed that up with,
+            “Unfortunately, it might also be the last, unless we learn how to avoid the risks."
+
+            There are potentially huge risks for society and human life as we know it, particularly when you consider
+            some countries are racing to develop AI-enabled autonomous weapons. AI and machine learning are the
+            foundation on which many other technologies are built. For instance, without AI, we wouldn't have achieved
+            the amazing advances in the Internet of Things, virtual reality, chatbots, facial recognition, robotics,
+            automation, or self-driving cars, just to name a few.
+
+
+        </p>
+        <p>
+            AI is also going to transform human jobs. AI-enabled automation will have a particularly significant impact
+            and may lead to the displacement of many jobs. But rather than subscribing to a vision of a dystopian future
+            where all human jobs are given over to robots, I believe AI will make our working lives better. AI will
+            enhance the work of humans, and new jobs will arise to replace displaced jobs.
+
+        </p>
+    </div>
+    <div class="slider slider-1">
+        <div class="photos">
+            <img id='image' class="shown" alt="">
+            <img id='image1' alt="">
+            <img id='image2' alt="">
+            <img id='image3' alt="">
+            <div class="buttons">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
+        </div>
+    </div> 
+    
+    <div>
+        <p>
+            What's more, as machines become more intelligent and capable of carrying out more human tasks, I believe
+            that our uniquely human capabilities, things like creativity, empathy, and critical thinking, will become
+            all the more precious and valuable in the workplaces of the future.
+        </p>
+        <h2>
+            Gene Technology
+        </h2>
+
+        <p>
+            Genomics is an interdisciplinary field of biology that focuses on the understanding and manipulation of DNA
+            and genomes of living organisms. Gene editing is a group of technologies that enables genetic engineering in
+            order to change the DNA and genetic structure of living organisms.
+        </p>
+        <p>
+            Biotechnology is advancing to the point where it's viable to alter the DNA encoded within a cell; this will
+            influence the characteristics or traits that its descendants will have. In plants, this could affect the
+            number of leaves or their coloring, while in humans, it could affect their height, eye color, or their
+            likelihood of developing diseases. This opens up a range of possibilities that are almost unlimited, as it
+            means that any characteristic of a living organism that is inherited can theoretically be changed.
+        </p>
+
+        <p>
+            Much of the work being done with gene editing is in the field of healthcare. Among the most exciting current
+            projects is the correction of DNA mutations which can lead to serious illnesses such as cancer or heart
+            disease. But, perhaps more than with any other technology, there are a huge number of ethical and legal
+            concerns as well as "what if" questions when it comes to genetic manipulation and editing. Genome editing in
+            humans is currently banned in many countries, including much of Europe, as its long-term results are not
+            understood.
+        </p>
+    </div>
+    </div>
+</body>
+
+</html>
